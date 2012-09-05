@@ -1,3 +1,0 @@
-#!/bin/bash
-sudo rm -f /etc/chef/ohai_plugins/README
-sudo chef-solo -c solo.rb
