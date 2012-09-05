@@ -4,6 +4,9 @@
         "password": "$1$eL/ImYNj$blwYNLHsWONZXNGT0kVb3.",
         "ls_color": true
     },
+    "rbenv": {
+        "global": "1.9.3-p0"
+    },
     "run_list": ["recipe[rbenv::system_install]",
                  "recipe[ruby_build]",
                  "recipe[main]"]

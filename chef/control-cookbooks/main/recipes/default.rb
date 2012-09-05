@@ -1,40 +1,11 @@
+# set up git to be able to check out
 package "git-core"
-package "zsh"
 
-rbenv_ruby "1.9.3-p0" do
-  action :install
-end
+# set up the needed ruby version based on rbenv and ruby_build
+include_recipe "main::ruby"
 
-include_recipe "nginx::source"
+# set up the user who will be used from capistrano later on
+include_recipe "main::user"
 
-user node[:user][:name] do
-  password node[:user][:password]
-  gid "admin"
-  home "/home/#{node[:user][:name]}"
-  supports :manage_home => true
-  shell "/bin/zsh"
-end
-
-template "/home/#{node[:user][:name]}/.zshrc" do
-  source "zshrc.erb"
-  owner node[:user][:name]
-end
-
-directory "/home/#{node[:user][:name]}/example" do
-  owner node[:user][:name]
-end
-
-file "/home/#{node[:user][:name]}/example/index.html" do
-  owner node[:user][:name]
-  content "<h1>Hello World!</h1>"
-end
-
-file "#{node[:nginx][:dir]}/sites-available/example" do
-  content "server
-           {
-              listen 8080;
-              root /home/#{node[:user][:name]}/example;
-           }"
-end
-
-nginx_site "example"
+# bring up the nginx server
+include_recipe "main::nginx"

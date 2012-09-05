@@ -1,4 +1,0 @@
-sudo apt-get install ruby
-sudo gem install librarian --no-ri --no-rdoc
-sudo gem install chef ruby-shadow --no-ri --no-rdoc
-librarian-chef install

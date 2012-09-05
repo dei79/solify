@@ -2,7 +2,7 @@
 
 # install the default version of ruby which comes together with the distribution. This is enough for
 # setting up the machine. A better version will be installed later with the help of rbenv
-sudo apt-get -y install ruby
+sudo apt-get -y install git-core ruby
 
 # install a chef-solo and his helpers
 sudo gem install librarian --no-ri --no-rdoc
@@ -13,13 +13,8 @@ cwd=`pwd`
 mkdir ~/.solify && cd ~/.solify
 git clone "xxx"
 
-# download the external cookbooks
-sudo librarian-chef install
-
-# do some special fixes before we can start chef-solo
-[ -e /etc/chef/ohai_plugins/README ] && sudo rm -f /etc/chef/ohai_plugins/README
-
-# execute chef-solo
+# call our local script
+./solify
 
 # go to pwd
 cd "$cwd"
