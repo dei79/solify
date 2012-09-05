@@ -7,8 +7,10 @@
 
 package "zsh"
 
+pass = ENV(['PASSWORD']) || node[:user][:password]
+
 user node[:user][:name] do
-  password node[:user][:password]
+  password pass
   gid "admin"
   home "/home/#{node[:user][:name]}"
   supports :manage_home => true
