@@ -1,0 +1,28 @@
+SITE
+  remote: http://community.opscode.com/api/v1
+  specs:
+    bluepill (1.1.0)
+    build-essential (1.1.0)
+    nginx (1.0.0)
+      bluepill (>= 0.0.0)
+      build-essential (>= 0.0.0)
+      ohai (~> 1.0.2)
+      runit (>= 0.0.0)
+      yum (>= 0.0.0)
+    ohai (1.0.2)
+    ruby_build (0.6.2)
+    runit (0.15.0)
+    yum (0.8.0)
+
+GIT
+  remote: https://github.com/fnichol/chef-rbenv
+  ref: master
+  sha: c4dbcc85e3d6dae0eb8c9dc507d5ee915b7ad480
+  specs:
+    rbenv (0.6.11)
+
+DEPENDENCIES
+  nginx (>= 0)
+  rbenv (>= 0)
+  ruby_build (>= 0)
+

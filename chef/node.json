@@ -1,0 +1,10 @@
+{
+    "user": {
+        "name": "deployer",
+        "password": "$1$eL/ImYNj$blwYNLHsWONZXNGT0kVb3.",
+        "ls_color": true
+    },
+    "run_list": ["recipe[rbenv::system_install]",
+                 "recipe[ruby_build]",
+                 "recipe[main]"]
+}
