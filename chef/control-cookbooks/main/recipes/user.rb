@@ -7,7 +7,7 @@
 
 package "zsh"
 
-pass = ENV(['PASSWORD']) || node[:user][:password]
+pass = ENV['PASSWORD'] || node[:user][:password]
 
 user node[:user][:name] do
   password pass
