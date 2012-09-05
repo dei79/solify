@@ -11,6 +11,12 @@ Just log into your target machine via ssh with a user who has sudo right and cop
  (curl -L https://raw.github.com/dei79/solify/master/solify-ubuntu-default | bash)
  ```
 
+## Attention
+solify creates a user on the system with the username "deployer". This user has sudo rights and the password is
+initialized with the value "password".
+
+!!! PLEASE CHANGE THIS PASSWORD DIRECTLY BEFORE YOU DEPLOY THE FIRST APPLICATION !!!
+
 ## Credits
 
 * Thanks to @rbates for his [railscast](http://railscasts.com/episodes/339-chef-solo-basics) about chef
