@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# just store the current location
+cwd=`pwd`
+
 #
 # prepare the system if we run the first time
 #
@@ -11,14 +14,19 @@ if [ ! -e ~/.solify ]; then
     sudo apt-get -y install git-core ruby > /dev/null
 
     # install a chef-solo and his helpers
-    echo "Installing chef-solo"
-    sudo gem install librarian --no-ri --no-rdoc > /dev/null
-    sudo gem install chef ruby-shadow --no-ri --no-rdoc > /dev/null
+    if [ -z `which librarian-chef` ]; then
+        echo "Installing librarian-chef"
+        sudo gem install librarian --no-ri --no-rdoc > /dev/null
+    fi
+
+    if [ -z `which chef-solo` ]; then
+        echo "Installing chef-solo"
+        sudo gem install chef ruby-shadow --no-ri --no-rdoc > /dev/null
+    fi
 
     # prepare our working directory
     echo "Preparing filesystem"
-    cwd=`pwd`
-    mkdir ~/.solify
+    [ ! -e "~/.solify" ] &&  mkdir ~/.solify
 
 fi
 
