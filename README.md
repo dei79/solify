@@ -5,7 +5,7 @@ solify is a set of cookbooks and tools which makes it ultra simple to move a bas
 ## Just do it
 * Log into you server via ssh with a user who has sudo rights!
 * Execute the right bootstrapper for your base platform
-  * Ubuntu 10.04/12.04 LTS 
+ * Ubuntu 10.04/12.04 LTS
   ```bash
   (curl -L https://raw.github.com/dei79/solify/master/solify-ubuntu-default | bash)
   ```
