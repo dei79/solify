@@ -10,3 +10,8 @@ Just log into your target machine via ssh with a user who has sudo right and cop
  ```bash
  (curl -L https://raw.github.com/dei79/solify/master/solify-ubuntu-default | bash)
  ```
+
+## Credits
+
+* Thanks to @rbates for his [railscast](http://railscasts.com/episodes/339-chef-solo-basics) about chef
+* Thanks to the [librarian project](https://github.com/applicationsonline/librarian) for the chef dependencies
