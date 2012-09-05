@@ -7,5 +7,5 @@ solify is a set of cookbooks and tools which makes it ultra simple to move a bas
 * Execute the right bootstrapper for your base platform
   * Ubuntu 10.04/12.04 LTS 
   ```bash
-  curl -L https://raw.github.com/dei79/solify/master/solify-ubuntu-default | sudo -i bash
+  (curl -L https://raw.github.com/dei79/solify/master/solify-ubuntu-default | bash)
   ```
