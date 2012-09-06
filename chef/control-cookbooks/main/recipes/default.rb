@@ -7,5 +7,5 @@ include_recipe "main::ruby"
 # set up the user who will be used from capistrano later on
 include_recipe "main::user"
 
-# bring up the nginx server
-include_recipe "main::nginx"
+# bring up the apache2 server
+include_recipe "main::apache2"

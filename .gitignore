@@ -1,4 +1,1 @@
-./chef/cookbooks
-./chef/cache
-./chef/tmp
-.idea
+idea

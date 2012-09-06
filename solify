@@ -4,12 +4,15 @@
 cd chef
 
 # download the external cookbooks
+echo "Installing or updating external cookbooks"
 sudo librarian-chef install
 
 # do some special fixes before we can start chef-solo
+echo "Fixing file system"
 [ -e /etc/chef/ohai_plugins/README ] && sudo rm -f /etc/chef/ohai_plugins/README
 
 # execute chef-solo
+echo "Running chef-solo"
 sudo chef-solo -c solo.rb
 
 # go up
