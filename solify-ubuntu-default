@@ -8,22 +8,6 @@ cwd=`pwd`
 #
 if [ ! -e ~/.solify ]; then
 
-    # install the default version of ruby which comes together with the distribution. This is enough for
-    # setting up the machine. A better version will be installed later with the help of rbenv
-    echo "Installing system packages"
-    sudo apt-get -y install git-core ruby > /dev/null
-
-    # install a chef-solo and his helpers
-    if [ -z `which librarian-chef` ]; then
-        echo "Installing librarian-chef"
-        sudo gem install librarian --no-ri --no-rdoc > /dev/null
-    fi
-
-    if [ -z `which chef-solo` ]; then
-        echo "Installing chef-solo"
-        sudo gem install chef ruby-shadow --no-ri --no-rdoc > /dev/null
-    fi
-
     # prepare our working directory
     echo "Preparing filesystem"
     [ ! -e "~/.solify" ] &&  mkdir ~/.solify
