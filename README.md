@@ -8,6 +8,10 @@ Just log into your target machine via ssh with a user who has sudo right and cop
 * Ubuntu 10.04/12.04 LTS
 
  ```bash
+ (wget -O - -o /dev/null https://raw.github.com/dei79/solify/master/solify-ubuntu-default | bash)
+ ```
+
+ ```bash
  (curl -L https://raw.github.com/dei79/solify/master/solify-ubuntu-default | bash)
  ```
 
