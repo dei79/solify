@@ -9,6 +9,7 @@ cookbook 'ruby_build'
 
 # we use apache2
 cookbook 'apache2'
+cookbook 'passenger_apache2'
 
 # cookbook 'chef-client'
 

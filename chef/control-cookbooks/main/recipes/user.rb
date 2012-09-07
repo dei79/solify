@@ -7,6 +7,13 @@
 
 package "zsh"
 
+rbenv_gem "ruby-shadow" do
+  rbenv_version   node[:rbenv][:global]
+  action          :install
+end
+
+rbenv_rehash "Doing the rehash dance"
+
 pass = ENV['PASSWORD'] || node[:user][:password]
 
 user node[:user][:name] do

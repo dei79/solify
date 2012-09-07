@@ -1,3 +1,6 @@
+# update the repositories
+execute "apt-get update"
+
 # set up git to be able to check out
 package "git-core"
 
@@ -8,4 +11,4 @@ include_recipe "main::ruby"
 include_recipe "main::user"
 
 # bring up the apache2 server
-include_recipe "main::apache2"
+include_recipe "passenger"
