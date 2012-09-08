@@ -2,6 +2,8 @@
 
 # install the default version of ruby which comes together with the distribution. This is enough for
 # setting up the machine. A better version will be installed later with the help of rbenv
+echo "Updating repositories"
+sudo apt-get update
 echo "Installing system packages"
 sudo apt-get -y install git-core ruby rubygems > /dev/null
 
