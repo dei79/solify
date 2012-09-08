@@ -1,7 +1,7 @@
 module Opscode
   module Solify
     module General
-      def create_user(user_id)
+      def create_user(username)
         # install the zsh
         package "zsh"
 
@@ -15,18 +15,18 @@ module Opscode
         rbenv_rehash "Doing the rehash dance"
 
         # generate a teamcity account
-        user "#{user_id}" do
+        user "#{username}" do
           extend Opscode::OpenSSL::Password
           password secure_password
           gid "sudo"
-          home "/home/#{user_id}"
+          home "/home/#{username}"
           supports :manage_home => true
           shell "/bin/zsh"
         end
 
-        Chef::Resource::Template.new "/home/#{user_id}/.zshrc" do
+        Chef::Resource::Template.new "/home/#{username}/.zshrc" do
           source "zshrc.erb"
-          owner "#{user_id}"
+          owner "#{username}"
         end
 
       end
