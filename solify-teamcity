@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# just store the current location
+cwd=`pwd`
+
+#
+# prepare the system if we run the first time
+#
+if [ ! -e ~/.solify ]; then
+
+    # prepare our working directory
+    echo "Preparing filesystem"
+    [ ! -e "~/.solify" ] &&  mkdir ~/.solify
+
+fi
+
+# visit our directory
+cd ~/.solify
+
+# clone the sources
+if [ -e solify ]; then
+    echo "Updating github repository"
+    cd solify && git pull origin && cd ..
+else
+    echo "Cloning github repository"
+    git clone git://github.com/dei79/solify.git
+fi
+
+# call our local script
+echo "Start solifying..."
+cd solify && ./solify teamcity && cd ..
+
+# go to pwd
+echo "Done"
+cd "$cwd"
