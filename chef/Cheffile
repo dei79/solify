@@ -7,17 +7,9 @@ site 'http://community.opscode.com/api/v1'
 cookbook 'rbenv', :git => 'https://github.com/fnichol/chef-rbenv'
 cookbook 'ruby_build'
 
+# install some helpers
+cookbook 'openssl'
+
 # we use apache2
 cookbook 'apache2'
 cookbook 'passenger_apache2'
-
-# cookbook 'chef-client'
-
-# cookbook 'apache2', '>= 1.0.0'
-
-# cookbook 'rvm',
-#   :git => 'https://github.com/fnichol/chef-rvm'
-
-# cookbook 'postgresql',
-#   :git => 'https://github.com/findsyou/cookbooks',
-#   :ref => 'postgresql-improvements'

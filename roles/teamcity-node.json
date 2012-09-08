@@ -1,0 +1,14 @@
+{
+    "rbenv": {
+        "global": "1.9.3-p0"
+    },
+    "teamcity": {
+        "version": "7.1"
+    },
+    "run_list": ["recipe[general]",
+                 "recipe[rbenv::system_install]",
+                 "recipe[ruby_build]",
+                 "recipe[general::ruby]",
+                 "recipe[general::java]",
+                 "recipe[teamcity]"]
+}

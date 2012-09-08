@@ -3,6 +3,7 @@ SITE
   specs:
     apache2 (1.1.12)
     build-essential (1.1.0)
+    openssl (1.0.0)
     passenger_apache2 (1.0.0)
       apache2 (>= 1.0.4)
       build-essential (>= 0.0.0)
@@ -17,6 +18,7 @@ GIT
 
 DEPENDENCIES
   apache2 (>= 0)
+  openssl (>= 0)
   passenger_apache2 (>= 0)
   rbenv (>= 0)
   ruby_build (>= 0)
