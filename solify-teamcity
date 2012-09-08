@@ -3,9 +3,6 @@
 # just store the current location
 cwd=`pwd`
 
-echo "Installing system packages"
-sudo apt-get -y install git-core ruby > /dev/null
-
 #
 # prepare the system if we run the first time
 #
