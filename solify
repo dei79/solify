@@ -3,9 +3,10 @@
 # install the default version of ruby which comes together with the distribution. This is enough for
 # setting up the machine. A better version will be installed later with the help of rbenv
 echo "Updating repositories"
-sudo apt-get update
+sudo apt-get -q update
+
 echo "Installing system packages"
-sudo apt-get -y install git-core ruby rubygems > /dev/null
+sudo apt-get -q -y install git-core ruby rubygems > /dev/null
 
 # install a chef-solo and his helpers
 if [ -z `which librarian-chef` ]; then
@@ -17,7 +18,6 @@ if [ -z `which chef-solo` ]; then
     echo "Installing chef-solo"
     sudo gem install chef ruby-shadow --no-ri --no-rdoc > /dev/null
 fi
-
 
 # visit the chef directory
 cd chef

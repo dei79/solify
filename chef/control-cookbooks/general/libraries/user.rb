@@ -15,7 +15,7 @@ module Opscode
         rbenv_rehash "Doing the rehash dance"
 
         # generate a teamcity account
-        user user_id do
+        user "#{user_id}" do
           extend Opscode::OpenSSL::Password
           password secure_password
           gid "sudo"
@@ -26,7 +26,7 @@ module Opscode
 
         Chef::Resource::Template.new "/home/#{user_id}/.zshrc" do
           source "zshrc.erb"
-          owner user_id
+          owner "#{user_id}"
         end
 
       end
