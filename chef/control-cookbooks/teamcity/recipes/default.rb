@@ -4,8 +4,6 @@
 #
 # Author:: Dirk Eisenberg (<dirk.eisenberg@gmail.com>)
 #
-# extend the module
-extend Opscode::Solify::General
 
 # generate the tc download cache
 directory "/.tcdl" do
