@@ -10,5 +10,6 @@
     "run_list": ["recipe[general]",
                  "recipe[rbenv::system_install]",
                  "recipe[ruby_build]",
-                 "recipe[main]"]
+                 "recipy[main:user]",
+                 "recipe[passenger]"]
 }
