@@ -28,9 +28,16 @@ sudo librarian-chef install
 echo "Fixing file system"
 [ -e /etc/chef/ohai_plugins/README ] && sudo rm -f /etc/chef/ohai_plugins/README
 
+# define the right node file
+nodefile="railsapp-node.json"
+if [ ! -z $1 ]; then
+ nodefile="$1-node.json"
+fi
+echo "Using the following role configuration: $nodefile"
+
 # execute chef-solo
 echo "Running chef-solo"
-sudo chef-solo -c solo.rb
+sudo chef-solo -c solo.rb -j "../roles/$nodefile"
 
 # go up
 cd ..

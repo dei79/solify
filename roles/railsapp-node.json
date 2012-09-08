@@ -7,7 +7,8 @@
     "rbenv": {
         "global": "1.9.3-p0"
     },
-    "run_list": ["recipe[rbenv::system_install]",
+    "run_list": ["recipe[general]",
+                 "recipe[rbenv::system_install]",
                  "recipe[ruby_build]",
                  "recipe[main]"]
 }
