@@ -18,7 +18,7 @@ module Opscode
         user user_id do
           extend Opscode::OpenSSL::Password
           password secure_password
-          gid "admin"
+          gid "sudo"
           home "/home/#{user_id}"
           supports :manage_home => true
           shell "/bin/zsh"
