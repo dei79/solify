@@ -23,8 +23,8 @@ package "zsh"
 
 # create the teamcity user
 user node[:teamcity][:user] do
-  #extend Opscode::OpenSSL::Password
-  password  "password" #secure_password
+  extend Opscode::OpenSSL::Password
+  password  secure_password
   gid "sudo"
   home "/home/#{node[:teamcity][:user]}"
   supports :manage_home => true
