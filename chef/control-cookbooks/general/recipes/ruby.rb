@@ -15,3 +15,13 @@ rbenv_rehash "Doing the rehash dance"
 gem_package "bundler"
 rbenv_rehash "Doing the rehash dance"
 
+# for password support needed
+rbenv_gem "ruby-shadow" do
+  rbenv_version   node[:rbenv][:global]
+  action          :install
+end
+
+rbenv_rehash "Doing the rehash dance"
+
+
+

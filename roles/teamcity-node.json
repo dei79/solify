@@ -3,7 +3,8 @@
         "global": "1.9.3-p0"
     },
     "teamcity": {
-        "version": "7.1"
+        "version": "7.1",
+        "user": "teamcity"
     },
     "run_list": ["recipe[general]",
                  "recipe[rbenv::system_install]",

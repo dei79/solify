@@ -20,8 +20,23 @@ execute "teamcity-download" do
   cwd "/.tcdl"
 end
 
+# install the zsh
+package "zsh"
+
 # create the teamcity user
-create_user("teamcity")
+user node[:teamcity][:user] do
+  extend Opscode::OpenSSL::Password
+  password secure_password
+  gid "sudo"
+  home "/home/#{node[:teamcity][:user]}"
+  supports :manage_home => true
+  shell "/bin/zsh"
+end
+
+template "/home/#{node[:teamcity][:user]}/.zshrc" do
+  source "zshrc.erb"
+  owner "#{node[:teamcity][:user]}"
+end
 
 # extract the team city binaries
 execute "teamcity-extract" do
